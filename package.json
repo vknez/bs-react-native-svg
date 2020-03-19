@@ -1,0 +1,7 @@
+{
+  "name": "bs-react-native-svg",
+  "version": "0.0.0",
+  "description": "ReasonML bindings for react-native-svg",
+  "main": "index.js",
+  "license": "MIT"
+}
