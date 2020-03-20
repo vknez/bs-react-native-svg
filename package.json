@@ -1,6 +1,6 @@
 {
   "name": "bs-react-native-svg",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "ReasonML bindings for react-native-svg",
   "repository": "https://github.com/vknez/bs-react-native-svg.git",
   "license": "MIT",
