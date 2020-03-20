@@ -1,5 +1,6 @@
 {
   "name": "bs-react-native-svg",
+  "namespace": "react-native-svg",
   "refmt": 3,
   "reason": {
     "react-jsx": 3
@@ -15,5 +16,5 @@
       "subdirs": true
     }
   ],
-  "bs-dependencies": []
+  "bs-dependencies": ["reason-react"]
 }
