@@ -2,6 +2,59 @@
   "name": "bs-react-native-svg",
   "version": "0.0.0",
   "description": "ReasonML bindings for react-native-svg",
-  "main": "index.js",
-  "license": "MIT"
+  "repository": "https://github.com/vknez/bs-react-native-svg.git",
+  "license": "MIT",
+  "keywords": [
+    "reason",
+    "reasonml",
+    "bucklescript",
+    "react-native",
+    "react-native-svg"
+  ],
+  "scripts": {
+    "re:clean": "bsb -clean-world",
+    "re:build": "bsb -make-world",
+    "re:clean-build": "bsb -make-world -clean-world",
+    "re:start": "bsb -make-world -w",
+    "format:most": "prettier --write \"**/*.{md,json,js,css}\"",
+    "format:re": "find . -name \"*.re\" -or -name \"*.rei\" | grep -v \"node_modules\" | xargs bsrefmt --in-place",
+    "format": "yarn format:most && yarn format:re",
+    "start": "yarn re:start",
+    "build": "yarn re:build",
+    "test": "yarn re:clean-build",
+    "release": "npmpub"
+  },
+  "files": [
+    "!.github",
+    "!.DS_Store",
+    "!**/*.bs.js",
+    "!.merlin",
+    "!lib/bs",
+    "!lib/ocaml"
+  ],
+  "peerDependencies": {
+    "react-native-svg": "12.0.3"
+  },
+  "devDependencies": {
+    "bs-platform": "7.2.2",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.8",
+    "npmpub": "^5.0.0",
+    "prettier": "^1.19.1"
+  },
+  "lint-staged": {
+    "*.{md,json,js,css}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.{re,rei}": [
+      "bsrefmt --in-place",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
 }
